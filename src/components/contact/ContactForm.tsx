@@ -69,17 +69,37 @@ export function ContactForm({ formEndpoint }: ContactFormProps) {
 
       const res = await fetch(formEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(payload),
       });
 
       if (res.ok) {
         setStatus("success");
       } else {
-        const text = await res.text();
+        // Attempt to extract a helpful message from Formspree's response body
+        let bodyText: string;
+        try {
+          const contentType = res.headers.get("content-type") || "";
+          if (contentType.includes("application/json")) {
+            const json = await res.json();
+            // stringify to preserve structure in logs
+            bodyText = JSON.stringify(json);
+          } else {
+            bodyText = await res.text();
+          }
+        } catch (parseErr) {
+          bodyText = `Unable to parse response body: ${String(parseErr)}`;
+        }
+
+        // Log detailed status and body to aid debugging in the browser console
+        console.error("Formspree response error:", {
+          status: res.status,
+          statusText: res.statusText,
+          body: bodyText,
+        });
+
         setStatus("error");
         setErrorMessage("Unable to send your message right now. Please try again or contact directly.");
-        console.error("Formspree response error:", res.status, text);
       }
     } catch (err) {
       setStatus("error");
