@@ -41,7 +41,7 @@ export function CaseStudyHeader({
           <span className="text-xs font-mono text-sky-300 bg-sky-950/70 border border-sky-800/60 px-2.5 py-1 rounded">
             {category}
           </span>
-          <Badge variant="subtle">Professional Experience Case Study</Badge>
+          <Badge variant="subtle">Internship Case Study</Badge>
         </div>
 
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-[1.15]">

@@ -15,7 +15,7 @@ export const careerExperience: CareerExperienceData = {
     role: "Cybersecurity & Network Security Intern",
     domain: "Enterprise & Industrial OT/IT Security",
     summary:
-      "Hands-on experience supporting enterprise OT/IT cybersecurity infrastructure, including Fortinet firewall deployment and management, centralized FortiManager administration, industrial switching infrastructure, unidirectional OT/IT communication, Linux-based virtualization, network configuration and security monitoring.",
+      "Internship project experience supporting enterprise OT/IT cybersecurity infrastructure, including Fortinet firewall deployment and management, centralized FortiManager administration, industrial switching infrastructure, unidirectional OT/IT communication, Linux-based virtualization, network configuration and security monitoring.",
     cards: [
       {
         id: "fortinet-exp",

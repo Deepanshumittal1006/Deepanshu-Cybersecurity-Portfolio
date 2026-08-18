@@ -2,7 +2,7 @@ import { ProfileData } from "@/types/portfolio";
 
 export const profileData: ProfileData = {
   name: "Deepanshu",
-  primaryTitle: "Network Engineer | Cybersecurity & OT Security",
+  primaryTitle: "Network Engineer specializing in Security & OT Infrastructure",
   currentRole: "Currently: Network Engineer — NOC / L1 Support at iLayer Solution LLP",
   secondaryTitles: [
     "Network Security",

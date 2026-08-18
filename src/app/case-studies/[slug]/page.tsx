@@ -241,7 +241,20 @@ export default function CaseStudyPage({ params }: PageProps) {
         </Card>
       </section>
 
-      {/* 14. Footer Sanitization Disclaimer & Navigation */}
+      {/* 14. How this experience applies today (bridge to current role) */}
+      <section className="space-y-3">
+        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+          <Lightbulb className="w-4 h-4 text-amber-400" />
+          <h2 className="text-lg font-bold text-slate-100">How this experience applies today</h2>
+        </div>
+        <Card variant="default">
+          <p className="text-sm text-slate-300 leading-relaxed">
+            This internship project experience provides a foundation for network troubleshooting, fault isolation, and operational visibility in my current NOC role. The hands-on configuration and monitoring practices applied during the internship directly support ticket handling, escalation workflows, and infrastructure observability required for effective NOC/L1 support.
+          </p>
+        </Card>
+      </section>
+
+      {/* 15. Footer Sanitization Disclaimer & Navigation */}
       {study.sanitizationDisclaimer && (
         <div className="p-3.5 rounded-lg bg-slate-900/70 border border-slate-800 text-xs font-mono text-slate-500 leading-relaxed">
           <span className="text-slate-400 font-semibold">Note: </span>

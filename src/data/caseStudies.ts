@@ -16,12 +16,12 @@ export const caseStudiesData: CaseStudy[] = [
       "Centralized Management",
     ],
     publicDescription:
-      "Hands-on experience supporting enterprise Fortinet firewall infrastructure, including firewall deployment and configuration, security policy administration, network-service configuration, logging, time synchronization, and centralized management through FortiManager.",
+      "Internship project experience supporting enterprise Fortinet firewall infrastructure, including firewall deployment and configuration, security policy administration, network-service configuration, logging, time synchronization, and centralized management through FortiManager.",
     metrics: [
       {
         value: "90+",
         label: "Fortinet Firewalls",
-        detail: "Deployed across enterprise security infrastructure",
+      detail: "Supported a firewall infrastructure of 90+ FortiGate units across 3 sites during a cybersecurity internship",
       },
       {
         value: "3",
@@ -149,7 +149,7 @@ export const caseStudiesData: CaseStudy[] = [
       "OT Network Segmentation",
     ],
     publicDescription:
-      "Configured and worked with Hirschmann industrial switching infrastructure supporting Layer 2/Layer 3 networking, VLAN segmentation, inter-VLAN routing, static routing, redundancy and monitoring capabilities.",
+      "Internship project experience configuring Hirschmann industrial switching infrastructure supporting Layer 2/Layer 3 networking, VLAN segmentation, inter-VLAN routing, static routing, redundancy and monitoring capabilities.",
     metrics: [
       {
         value: "16+",
@@ -268,7 +268,7 @@ export const caseStudiesData: CaseStudy[] = [
       "OT/IT Segmentation",
     ],
     publicDescription:
-      "Worked with Rail Data Diode infrastructure designed to enforce hardware-level unidirectional communication between network segments. Enforced hardware-level unidirectional OT-to-IT data transfer while eliminating the return communication path across the protected boundary.",
+      "Internship project experience with Rail Data Diode infrastructure designed to enforce hardware-level unidirectional communication between network segments. Enforced hardware-level unidirectional OT-to-IT data transfer while eliminating the return communication path across the protected boundary.",
     metrics: [
       {
         value: "16+",
@@ -375,7 +375,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Bash/Shell",
     ],
     publicDescription:
-      "Deployed virtual-machine infrastructure on Ubuntu-based KVM/QEMU servers, including QCOW2 image provisioning, Linux bridge networking and VM creation through virt-manager.",
+      "Internship project experience deploying virtual-machine infrastructure on Ubuntu-based KVM/QEMU servers, including QCOW2 image provisioning, Linux bridge networking and VM creation through virt-manager.",
     metrics: [
       {
         value: "5+",

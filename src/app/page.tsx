@@ -174,6 +174,18 @@ export default function HomePage() {
                   {currentPosition.summary}
                 </p>
               </Card>
+
+              <Card variant="default" className="mt-3">
+                <h4 className="text-sm font-bold text-slate-100">Role Highlights & Tools</h4>
+                <ul className="mt-2 text-sm text-slate-300 space-y-2">
+                  <li>Huawei U2000 / NCE NMS — network monitoring and inventory</li>
+                  <li>NOC / L1 support — ticket handling, incident triage, and escalation</li>
+                  <li>Fault and alarm handling, fault isolation, and operational visibility</li>
+                  <li>DWDM, MPLS, BRAS, SBC, MSAN — operational telecom infrastructure exposure</li>
+                  <li>TTBS AMC environment — monitoring and maintenance workflows</li>
+                  <li>Network monitoring, logging, and alarm correlation for early fault detection</li>
+                </ul>
+              </Card>
             </div>
 
             {/* 3B: Previous Professional Experience */}

@@ -1,6 +1,6 @@
 // Evidence-based skill classification types
 export type SkillEvidence =
-  | "Hands-on Enterprise Experience"
+  | "Internship Project Experience"
   | "Technical Experience"
   | "Currently Learning";
 
