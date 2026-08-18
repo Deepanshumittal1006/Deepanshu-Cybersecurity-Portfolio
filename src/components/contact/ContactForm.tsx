@@ -100,7 +100,7 @@ export function ContactForm({ formEndpoint }: ContactFormProps) {
       {status === "success" && (
         <div className="flex items-center gap-2 p-3 rounded-lg bg-emerald-950/60 border border-emerald-800/80 text-xs font-mono text-emerald-300">
           <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
-          <span>Message sent successfully. Thank you for reaching out. I'll get back to you soon.</span>
+          <span>Message sent successfully. Thank you for reaching out. I&apos;ll get back to you soon.</span>
         </div>
       )}
 
