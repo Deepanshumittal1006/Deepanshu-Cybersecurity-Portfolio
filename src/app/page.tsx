@@ -440,7 +440,7 @@ export default function HomePage() {
                 <h4 className="text-sm font-bold text-slate-100 border-b border-slate-800/80 pb-2">
                   Send a Direct Message
                 </h4>
-                <ContactForm recipientEmail={profileData.contact.email} />
+                <ContactForm formEndpoint={profileData.contact.formspreeEndpoint} />
               </Card>
             </div>
           </div>

@@ -18,6 +18,7 @@ export interface ProfileData {
     linkedin: string;
     github: string;
     resumeUrl: string;
+    formspreeEndpoint?: string; // optional Formspree endpoint if configured
   };
 }
 

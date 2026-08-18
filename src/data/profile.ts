@@ -28,5 +28,7 @@ export const profileData: ProfileData = {
     linkedin: "https://www.linkedin.com/in/deepanshu-mittal-ab9645211",
     github: "https://github.com/Deepanshumittal1006/Deepanshu-Cybersecurity-Portfolio",
     resumeUrl: "/assets/Deepanshu_Resume.pdf",
+    formspreeEndpoint: "https://formspree.io/f/xw1ewpyy",
   },
+
 };
