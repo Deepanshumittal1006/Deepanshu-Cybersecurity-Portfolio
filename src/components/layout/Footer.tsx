@@ -5,10 +5,6 @@ import { Container } from "@/components/common/Container";
 import { profileData } from "@/data/profile";
 
 export function Footer() {
-  const isGithubValid = profileData.contact.github.startsWith("http");
-  const isLinkedinValid = profileData.contact.linkedin.startsWith("http");
-  const isEmailValid = !profileData.contact.email.startsWith("[");
-
   return (
     <footer className="border-t border-slate-800/80 bg-cyber-surface/60 mt-20">
       <Container className="py-12">
@@ -46,60 +42,37 @@ export function Footer() {
             <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
               Direct Channels
             </h4>
-            <div className="space-y-2 text-xs">
-              {isGithubValid ? (
-                <a
-                  href={profileData.contact.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                  <span>GitHub Profile</span>
-                  <ArrowUpRight className="w-3 h-3 ml-auto text-slate-600" />
-                </a>
-              ) : (
-                <div className="flex items-center gap-2 text-slate-400">
-                  <Github className="w-3.5 h-3.5 text-slate-500" />
-                  <span>GitHub (Available upon request)</span>
-                </div>
-              )}
+            <div className="space-y-2.5 text-xs">
+              <a
+                href={profileData.contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-sky-300 transition-colors group"
+              >
+                <Github className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-400 transition-colors" />
+                <span>GitHub</span>
+                <ArrowUpRight className="w-3 h-3 ml-auto text-slate-600 group-hover:text-sky-400 transition-colors" />
+              </a>
 
-              {isLinkedinValid ? (
-                <a
-                  href={profileData.contact.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors"
-                >
-                  <Linkedin className="w-3.5 h-3.5" />
-                  <span>LinkedIn Profile</span>
-                  <ArrowUpRight className="w-3 h-3 ml-auto text-slate-600" />
-                </a>
-              ) : (
-                <div className="flex items-center gap-2 text-slate-400">
-                  <Linkedin className="w-3.5 h-3.5 text-slate-500" />
-                  <span>LinkedIn (Available upon request)</span>
-                </div>
-              )}
+              <a
+                href={profileData.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-sky-300 transition-colors group"
+              >
+                <Linkedin className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-400 transition-colors" />
+                <span>LinkedIn</span>
+                <ArrowUpRight className="w-3 h-3 ml-auto text-slate-600 group-hover:text-sky-400 transition-colors" />
+              </a>
 
-              {isEmailValid ? (
-                <a
-                  href={`mailto:${profileData.contact.email}`}
-                  className="flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>{profileData.contact.email}</span>
-                </a>
-              ) : (
-                <Link
-                  href="/#contact"
-                  className="flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors"
-                >
-                  <Mail className="w-3.5 h-3.5 text-slate-500" />
-                  <span>Contact via Portfolio</span>
-                </Link>
-              )}
+              <a
+                href={`mailto:${profileData.contact.email}`}
+                className="flex items-center gap-2 text-slate-300 hover:text-sky-300 transition-colors group"
+              >
+                <Mail className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-400 transition-colors" />
+                <span>{profileData.contact.email}</span>
+                <ArrowUpRight className="w-3 h-3 ml-auto text-slate-600 group-hover:text-sky-400 transition-colors" />
+              </a>
             </div>
           </div>
         </div>

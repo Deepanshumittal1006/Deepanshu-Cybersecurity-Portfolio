@@ -10,6 +10,10 @@ import {
   Building2,
   Calendar,
   Compass,
+  Github,
+  Linkedin,
+  ArrowUpRight,
+  MapPin,
 } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
@@ -22,6 +26,7 @@ import { careerExperience } from "@/data/experience";
 import { caseStudiesData } from "@/data/caseStudies";
 import { skillCategoryGroups } from "@/data/skills";
 import { LearningRoadmapSection } from "@/components/learning/LearningRoadmapSection";
+import { ContactForm } from "@/components/contact/ContactForm";
 
 export default function HomePage() {
   const { currentPosition, previousInternship } = careerExperience;
@@ -371,76 +376,59 @@ export default function HomePage() {
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Direct Channels */}
             <div className="space-y-4">
-              <Card variant="elevated" className="space-y-3">
-                <h4 className="text-sm font-bold text-slate-100">
+              <Card variant="elevated" className="space-y-4">
+                <h4 className="text-sm font-bold text-slate-100 border-b border-slate-800/80 pb-2">
                   Direct Contact Channels
                 </h4>
-                <div className="space-y-2 text-xs font-mono text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-sky-400" />
-                    <span>
-                      {!profileData.contact.email.startsWith("[")
-                        ? profileData.contact.email
-                        : "Email Available Upon Request"}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-slate-500">Location:</span>
-                    <span>{profileData.location}</span>
+                <div className="space-y-3 text-xs font-mono text-slate-300">
+                  <a
+                    href={`mailto:${profileData.contact.email}`}
+                    className="flex items-center gap-2.5 text-slate-300 hover:text-sky-300 transition-colors group p-2 rounded-md bg-slate-900/60 border border-slate-800"
+                  >
+                    <Mail className="w-4 h-4 text-sky-400 shrink-0" />
+                    <span className="truncate">{profileData.contact.email}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 ml-auto text-slate-600 group-hover:text-sky-400 transition-colors shrink-0" />
+                  </a>
+
+                  <a
+                    href={profileData.contact.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2.5 text-slate-300 hover:text-sky-300 transition-colors group p-2 rounded-md bg-slate-900/60 border border-slate-800"
+                  >
+                    <Github className="w-4 h-4 text-sky-400 shrink-0" />
+                    <span>GitHub</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 ml-auto text-slate-600 group-hover:text-sky-400 transition-colors shrink-0" />
+                  </a>
+
+                  <a
+                    href={profileData.contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2.5 text-slate-300 hover:text-sky-300 transition-colors group p-2 rounded-md bg-slate-900/60 border border-slate-800"
+                  >
+                    <Linkedin className="w-4 h-4 text-sky-400 shrink-0" />
+                    <span>LinkedIn</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 ml-auto text-slate-600 group-hover:text-sky-400 transition-colors shrink-0" />
+                  </a>
+
+                  <div className="flex items-center gap-2.5 text-slate-400 px-2 pt-1">
+                    <MapPin className="w-4 h-4 text-slate-500 shrink-0" />
+                    <span>Location: {profileData.location}</span>
                   </div>
                 </div>
               </Card>
             </div>
 
+            {/* Interactive Contact Form */}
             <div className="lg:col-span-2">
               <Card variant="elevated" className="space-y-4">
-                <h4 className="text-sm font-bold text-slate-100">
+                <h4 className="text-sm font-bold text-slate-100 border-b border-slate-800/80 pb-2">
                   Send a Direct Message
                 </h4>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
-                      <label htmlFor="contact-name" className="text-xs font-mono text-slate-300">
-                        Full Name
-                      </label>
-                      <input
-                        id="contact-name"
-                        type="text"
-                        placeholder="Your name"
-                        className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 focus:outline-none focus:border-sky-500"
-                        disabled
-                      />
-                    </div>
-                    <div className="space-y-1.5">
-                      <label htmlFor="contact-email" className="text-xs font-mono text-slate-300">
-                        Organization / Email
-                      </label>
-                      <input
-                        id="contact-email"
-                        type="email"
-                        placeholder="you@company.com"
-                        className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 focus:outline-none focus:border-sky-500"
-                        disabled
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-message" className="text-xs font-mono text-slate-300">
-                      Message
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      rows={4}
-                      placeholder="Your message regarding network engineering, NOC operations, or security opportunities..."
-                      className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 focus:outline-none focus:border-sky-500"
-                      disabled
-                    />
-                  </div>
-                  <Button variant="primary" size="sm" disabled aria-disabled="true">
-                    Send Message (Ready for Form Endpoint)
-                  </Button>
-                </form>
+                <ContactForm recipientEmail={profileData.contact.email} />
               </Card>
             </div>
           </div>

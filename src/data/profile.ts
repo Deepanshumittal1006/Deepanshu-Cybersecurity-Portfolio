@@ -24,9 +24,9 @@ export const profileData: ProfileData = {
     "Continuous security monitoring & fault management",
   ],
   contact: {
-    email: "[ADD CONTACT EMAIL]",
-    linkedin: "[ADD LINKEDIN URL]",
-    github: "[ADD GITHUB URL]",
-    resumeUrl: "/assets/Deepanshu_Resume_Sanitized.pdf",
+    email: "deepanshumittal1006@gmail.com",
+    linkedin: "https://www.linkedin.com/in/deepanshu-mittal-ab9645211",
+    github: "https://github.com/Deepanshumittal1006/Deepanshu-Cybersecurity-Portfolio",
+    resumeUrl: "/assets/Deepanshu_Resume.pdf",
   },
 };
