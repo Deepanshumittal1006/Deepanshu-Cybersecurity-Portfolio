@@ -378,13 +378,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Bash/Shell",
     ],
     publicDescription:
-<<<<<<< HEAD
-      "Internship project experience deploying Ubuntu-based KVM/QEMU infrastructure with QCOW2 provisioning, Linux bridge networking, and virt-manager.",
-    teaserMetric: "5+ Servers · KVM/QEMU · Ubuntu Linux",
-=======
       "Internship project experience deploying virtual-machine infrastructure on Ubuntu-based KVM/QEMU servers, including QCOW2 image provisioning, Linux bridge networking and VM creation through virt-manager.",
     metricSummary: "5+ Servers · KVM/QEMU · Ubuntu Linux",
->>>>>>> e16a524 (Fix: Resolve Vercel production build syntax error in src/app/page.tsx)
     metrics: [
       {
         value: "5+",

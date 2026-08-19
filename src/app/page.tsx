@@ -296,7 +296,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {caseStudiesData.map((study) => {
               // Force the exact evidence/metric lines and concise descriptions for homepage cards
-              let metricLine = study.teaserMetric || "";
+              let metricLine = study.metricSummary || "";
               let desc = study.publicDescription;
 
               switch (study.slug) {
@@ -317,6 +317,8 @@ export default function HomePage() {
                   desc = "Internship project experience deploying Ubuntu-based KVM/QEMU infrastructure with QCOW2 provisioning, Linux bridge networking, and virt-manager.";
                   break;
               }
+
+                return (
 
                 <Card
                   key={study.slug}
@@ -369,7 +371,9 @@ export default function HomePage() {
                     </div>
                   </div>
                 </Card>
-            ))}          </div>
+                );
+              })}
+          </div>
         </Container>
       </section>
 
