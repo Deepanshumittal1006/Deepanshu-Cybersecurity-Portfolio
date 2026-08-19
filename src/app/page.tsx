@@ -56,50 +56,78 @@ export default function HomePage() {
               {profileData.primaryTitle}
             </p>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
-              {profileData.bio}
-            </p>
+           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
+             Network Engineer with hands-on experience in telecom NOC operations, enterprise network security, and OT/IT infrastructure. Experienced with Huawei, Fortinet, industrial networking, and infrastructure virtualization.
+           </p>
 
-            {/* Specialization Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {profileData.secondaryTitles.map((title) => (
-                <span
-                  key={title}
-                  className="px-3 py-1 rounded-md text-xs font-mono bg-slate-900/90 text-slate-300 border border-slate-800"
-                >
-                  {title}
-                </span>
-              ))}
-            </div>
+           {/* Specialization Tags */}
+           <div className="flex flex-wrap gap-2 pt-2">
+             {profileData.secondaryTitles.map((title) => (
+               <span
+                 key={title}
+                 className="px-3 py-1 rounded-md text-xs font-mono bg-slate-900/90 text-slate-300 border border-slate-800"
+               >
+                 {title}
+               </span>
+             ))}
+           </div>
 
-            {/* Action CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-4">
-              <Button
-                variant="primary"
-                size="md"
-                href="#case-studies"
-                icon={<ArrowRight className="w-4 h-4" />}
-              >
-                View Case Studies
-              </Button>
-              <Button
-                variant="outline"
-                size="md"
-                href={profileData.contact.resumeUrl}
-                external
-                icon={<FileText className="w-4 h-4 text-slate-400" />}
-              >
-                Download Resume
-              </Button>
-              <Button
-                variant="ghost"
-                size="md"
-                href="#contact"
-                icon={<Mail className="w-4 h-4 text-slate-400" />}
-              >
-                Contact
-              </Button>
-            </div>
+           {/* Action CTAs */}
+           <div className="flex flex-wrap items-center gap-3 pt-4">
+             <Button
+               variant="primary"
+               size="md"
+               href="#case-studies"
+               icon={<ArrowRight className="w-4 h-4" />}
+             >
+               View Experience
+             </Button>
+             <Button
+               variant="outline"
+               size="md"
+               href={profileData.contact.resumeUrl}
+               external
+               icon={<FileText className="w-4 h-4 text-slate-400" />}
+             >
+               Download Resume
+             </Button>
+             <Button
+               variant="ghost"
+               size="md"
+               href="#contact"
+               icon={<Mail className="w-4 h-4 text-slate-400" />}
+             >
+               Contact
+             </Button>
+           </div>
+
+           {/* Impact at a Glance — Recruiter-first metrics */}
+           <div className="pt-6 max-w-3xl">
+             <h4 className="text-sm font-bold text-slate-100">Impact at a Glance</h4>
+             <p className="text-xs font-mono text-slate-400 mt-1">Selected internship / project experience</p>
+
+             <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3">
+               <div className="p-3 rounded-md bg-slate-900/90 border border-slate-800 flex flex-col items-start">
+                 <span className="text-[28px] sm:text-3xl font-extrabold text-slate-50">90+</span>
+                 <span className="text-xs font-mono text-sky-300 mt-1">Fortinet Firewalls</span>
+               </div>
+
+               <div className="p-3 rounded-md bg-slate-900/90 border border-slate-800 flex flex-col items-start">
+                 <span className="text-[28px] sm:text-3xl font-extrabold text-slate-50">16+</span>
+                 <span className="text-xs font-mono text-sky-300 mt-1">Hirschmann Industrial Switches</span>
+               </div>
+
+               <div className="p-3 rounded-md bg-slate-900/90 border border-slate-800 flex flex-col items-start">
+                 <span className="text-[28px] sm:text-3xl font-extrabold text-slate-50">16+</span>
+                 <span className="text-xs font-mono text-sky-300 mt-1">Rail Data Diodes</span>
+               </div>
+
+               <div className="p-3 rounded-md bg-slate-900/90 border border-slate-800 flex flex-col items-start">
+                 <span className="text-[28px] sm:text-3xl font-extrabold text-slate-50">5+</span>
+                 <span className="text-xs font-mono text-sky-300 mt-1">KVM/QEMU Servers</span>
+               </div>
+             </div>
+           </div>
           </div>
         </Container>
       </section>
@@ -170,20 +198,12 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  {currentPosition.summary}
-                </p>
-              </Card>
-
-              <Card variant="default" className="mt-3">
-                <h4 className="text-sm font-bold text-slate-100">Role Highlights & Tools</h4>
                 <ul className="mt-2 text-sm text-slate-300 space-y-2">
-                  <li>Huawei U2000 / NCE NMS — network monitoring and inventory</li>
-                  <li>NOC / L1 support — ticket handling, incident triage, and escalation</li>
-                  <li>Fault and alarm handling, fault isolation, and operational visibility</li>
-                  <li>DWDM, MPLS, BRAS, SBC, MSAN — operational telecom infrastructure exposure</li>
-                  <li>TTBS AMC environment — monitoring and maintenance workflows</li>
-                  <li>Network monitoring, logging, and alarm correlation for early fault detection</li>
+                  <li>NOC/L1 support for telecom network infrastructure and operational fault management.</li>
+                  <li>Network monitoring, alarm handling, fault isolation, ticket handling, and escalation.</li>
+                  <li>Huawei U2000 / NCE NMS for network monitoring and inventory.</li>
+                  <li>Exposure to DWDM, MPLS, BRAS, SBC, MSAN, and TTBS AMC environments.</li>
+                  <li>Network monitoring, logging, and alarm correlation for early fault detection.</li>
                 </ul>
               </Card>
             </div>
@@ -268,45 +288,71 @@ export default function HomePage() {
       <section id="case-studies" className="scroll-mt-20">
         <Container>
           <SectionHeader
-            index="03"
-            title="Featured Technical Case Studies"
-            subtitle="Documented architectural analyses of enterprise firewalls, industrial networking, hardware security diodes, and hypervisor virtualization."
+           index="03"
+           title="Featured Technical Case Studies"
+           subtitle="Technical case studies covering enterprise firewall deployment, industrial networking, OT security, and infrastructure virtualization."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {caseStudiesData.map((study) => (
-              <Card
-                key={study.slug}
-                variant="interactive"
-                className="flex flex-col justify-between space-y-4 group"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs font-mono text-sky-400 bg-sky-950/60 border border-sky-900/50 px-2 py-0.5 rounded">
-                      {study.category}
-                    </span>
-                  </div>
+            {caseStudiesData.map((study) => {
+              // Force the exact evidence/metric lines and concise descriptions for homepage cards
+              let metricLine = study.teaserMetric || "";
+              let desc = study.publicDescription;
 
-                  <h3 className="text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors">
-                    {study.title}
-                  </h3>
+              switch (study.slug) {
+                case "fortinet":
+                  metricLine = "90+ Firewalls · 3 Sites · FortiManager HA";
+                  desc = "Internship project experience supporting Fortinet firewall deployment, policy administration, logging, and centralized management through FortiManager.";
+                  break;
+                case "hirschmann":
+                  metricLine = "16+ Switches · Layer 3 Routing · VRRP";
+                  desc = "Internship project experience configuring Hirschmann industrial switching with Layer 2/Layer 3 networking, VLAN segmentation, routing, redundancy, and monitoring.";
+                  break;
+                case "data-diode":
+                  metricLine = "16+ Data Diodes · Unidirectional OT→IT · Static ARP";
+                  desc = "Internship project experience with Rail Data Diode infrastructure enforcing unidirectional OT-to-IT communication and protected network segmentation.";
+                  break;
+                case "kvm":
+                  metricLine = "5+ Servers · KVM/QEMU · Ubuntu Linux";
+                  desc = "Internship project experience deploying Ubuntu-based KVM/QEMU infrastructure with QCOW2 provisioning, Linux bridge networking, and virt-manager.";
+                  break;
+              }
 
-                  <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
-                    {study.publicDescription}
-                  </p>
-                </div>
-
-                <div className="space-y-3 pt-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {study.technologies.slice(0, 5).map((tech) => (
-                      <TechTag key={tech} name={tech} />
-                    ))}
-                    {study.technologies.length > 5 && (
-                      <span className="text-[10px] font-mono text-slate-500 self-center">
-                        +{study.technologies.length - 5} more
+              return (
+                <Card
+                  key={study.slug}
+                  variant="interactive"
+                  className="flex flex-col justify-between space-y-4 group"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-xs font-mono text-sky-400 bg-sky-950/60 border border-sky-900/50 px-2 py-0.5 rounded">
+                        {study.category}
                       </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors">
+                      {study.title}
+                    </h3>
+
+                    {metricLine && (
+                      <div className="text-sm font-mono font-semibold text-sky-300 mt-1">{metricLine}</div>
                     )}
+
+                    <p className="text-sm text-slate-400 leading-snug mt-2">{desc}</p>
                   </div>
+
+                  <div className="space-y-3 pt-2">
+                    <div className="flex flex-wrap gap-1.5">
+                      {study.technologies.slice(0, 5).map((tech) => (
+                        <TechTag key={tech} name={tech} />
+                      ))}
+                      {study.technologies.length > 5 && (
+                        <span className="text-[10px] font-mono text-slate-500 self-center">
+                          +{study.technologies.length - 5} more
+                        </span>
+                      )}
+                    </div>
 
                   <div className="pt-2 border-t border-slate-800/60">
                     <Link

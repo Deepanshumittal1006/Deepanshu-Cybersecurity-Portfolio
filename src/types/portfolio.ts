@@ -76,6 +76,7 @@ export interface CaseStudy {
   category: string;
   technologies: string[];
   publicDescription: string;
+  teaserMetric?: string;
   metrics?: CaseStudyMetric[];
   myRole: string[];
   objective: string;
