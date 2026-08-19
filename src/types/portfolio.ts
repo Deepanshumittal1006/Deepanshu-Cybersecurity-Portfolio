@@ -76,8 +76,9 @@ export interface CaseStudy {
   category: string;
   technologies: string[];
   publicDescription: string;
-  teaserMetric?: string;
-  metrics?: CaseStudyMetric[];
+    // Short, human-readable one-line summary of primary metrics to surface on the homepage cards
+    metricSummary?: string;
+    metrics?: CaseStudyMetric[];
   myRole: string[];
   objective: string;
   environment: string;

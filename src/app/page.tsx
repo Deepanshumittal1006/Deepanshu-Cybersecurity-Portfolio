@@ -318,7 +318,6 @@ export default function HomePage() {
                   break;
               }
 
-              return (
                 <Card
                   key={study.slug}
                   variant="interactive"
@@ -335,11 +334,16 @@ export default function HomePage() {
                       {study.title}
                     </h3>
 
-                    {metricLine && (
-                      <div className="text-sm font-mono font-semibold text-sky-300 mt-1">{metricLine}</div>
+                    {/* Metric summary surfaced on homepage cards */}
+                    {study.metricSummary && (
+                      <p className="text-sm font-mono font-semibold text-sky-300">
+                        {study.metricSummary}
+                      </p>
                     )}
 
-                    <p className="text-sm text-slate-400 leading-snug mt-2">{desc}</p>
+                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                      {study.publicDescription}
+                    </p>
                   </div>
 
                   <div className="space-y-3 pt-2">
@@ -354,19 +358,18 @@ export default function HomePage() {
                       )}
                     </div>
 
-                  <div className="pt-2 border-t border-slate-800/60">
-                    <Link
-                      href={`/case-studies/${study.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sky-400 hover:text-sky-300 transition-colors"
-                    >
-                      <span>Read Full Case Study</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    <div className="pt-2 border-t border-slate-800/60">
+                      <Link
+                        href={`/case-studies/${study.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sky-400 hover:text-sky-300 transition-colors"
+                      >
+                        <span>Read Full Case Study</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+                </Card>
+            ))}          </div>
         </Container>
       </section>
 

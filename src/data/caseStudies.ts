@@ -16,8 +16,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Centralized Management",
     ],
     publicDescription:
-      "Internship project experience supporting Fortinet firewall deployment, policy administration, logging, and centralized management through FortiManager.",
-    teaserMetric: "90+ Firewalls · 3 Sites · FortiManager HA",
+          "Internship project experience supporting enterprise Fortinet firewall infrastructure, including firewall deployment and configuration, security policy administration, network-service configuration, logging, time synchronization, and centralized management through FortiManager.",
+        metricSummary: "90+ Firewalls · 3 Sites · FortiManager HA",
     metrics: [
       {
         value: "90+",
@@ -150,8 +150,8 @@ export const caseStudiesData: CaseStudy[] = [
       "OT Network Segmentation",
     ],
     publicDescription:
-      "Internship project experience configuring Hirschmann industrial switching with Layer 2/Layer 3 networking, VLAN segmentation, routing, redundancy, and monitoring.",
-    teaserMetric: "16+ Switches · Layer 3 Routing · VRRP",
+          "Internship project experience configuring Hirschmann industrial switching infrastructure supporting Layer 2/Layer 3 networking, VLAN segmentation, inter-VLAN routing, static routing, redundancy and monitoring capabilities.",
+        metricSummary: "16+ Switches · Layer 3 Routing · VRRP",
     metrics: [
       {
         value: "16+",
@@ -270,8 +270,8 @@ export const caseStudiesData: CaseStudy[] = [
       "OT/IT Segmentation",
     ],
     publicDescription:
-      "Internship project experience with Rail Data Diode infrastructure enforcing unidirectional OT-to-IT communication and protected network segmentation.",
-    teaserMetric: "16+ Data Diodes · Unidirectional OT→IT · Static ARP",
+          "Internship project experience with Rail Data Diode infrastructure designed to enforce hardware-level unidirectional communication between network segments. Enforced hardware-level unidirectional OT-to-IT data transfer while eliminating the return communication path across the protected boundary.",
+        metricSummary: "16+ Data Diodes · Unidirectional OT→IT · Static ARP",
     metrics: [
       {
         value: "16+",
@@ -378,8 +378,13 @@ export const caseStudiesData: CaseStudy[] = [
       "Bash/Shell",
     ],
     publicDescription:
+<<<<<<< HEAD
       "Internship project experience deploying Ubuntu-based KVM/QEMU infrastructure with QCOW2 provisioning, Linux bridge networking, and virt-manager.",
     teaserMetric: "5+ Servers · KVM/QEMU · Ubuntu Linux",
+=======
+      "Internship project experience deploying virtual-machine infrastructure on Ubuntu-based KVM/QEMU servers, including QCOW2 image provisioning, Linux bridge networking and VM creation through virt-manager.",
+    metricSummary: "5+ Servers · KVM/QEMU · Ubuntu Linux",
+>>>>>>> e16a524 (Fix: Resolve Vercel production build syntax error in src/app/page.tsx)
     metrics: [
       {
         value: "5+",
