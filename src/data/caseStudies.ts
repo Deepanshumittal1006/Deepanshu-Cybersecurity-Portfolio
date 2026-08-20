@@ -3,36 +3,39 @@ import { CaseStudy } from "@/types/portfolio";
 export const caseStudiesData: CaseStudy[] = [
   {
     slug: "fortinet",
-    title: "Enterprise Firewall Deployment & Centralized Security Management",
-    category: "Network Security / Firewall Security / Enterprise Security",
+    title: "Enterprise Fortinet Firewall Deployment & Centralized Security Management",
+    category: "Network Security / Firewall Engineering",
     technologies: [
       "FortiGate",
       "FortiManager",
       "FortiOS",
       "Firewall Policies",
+      "NAT",
       "Transparent Mode",
+      "IPS/IDS",
       "NTP",
       "Syslog",
       "Centralized Management",
     ],
     publicDescription:
-          "Internship project experience supporting enterprise Fortinet firewall infrastructure, including firewall deployment and configuration, security policy administration, network-service configuration, logging, time synchronization, and centralized management through FortiManager.",
-        metricSummary: "90+ Firewalls · 3 Sites · FortiManager HA",
+      "Hands-on technical experience during my Cybersecurity Analyst Internship supporting Fortinet firewall deployment, policy administration, logging, and centralized management through FortiManager.",
+    teaserMetric: "90+ Firewalls · 3 Sites · FortiManager HA",
     metrics: [
       {
         value: "90+",
         label: "Fortinet Firewalls",
-      detail: "Supported a firewall infrastructure of 90+ FortiGate units across 3 sites during a cybersecurity internship",
+        detail:
+          "Hands-on experience supporting the deployment and configuration of Fortinet firewall infrastructure across 90+ FortiGate firewalls at 3 operational sites.",
       },
       {
         value: "3",
         label: "Operational Sites",
-        detail: "Multi-site operational infrastructure",
+        detail: "Multi-site enterprise security infrastructure",
       },
       {
         value: "18",
         label: "FortiManager-Managed Devices",
-        detail: "Centralized management in HA deployment",
+        detail: "Centralized policy & firmware orchestration in HA deployment",
       },
     ],
     myRole: [
@@ -59,63 +62,52 @@ export const caseStudiesData: CaseStudy[] = [
       "The deployment involved provisioning FortiGate firewall appliances within enterprise network segments, defining security policies for controlled communications, and configuring network management services. To streamline ongoing governance, FortiGate units were integrated into FortiManager for centralized device management, status verification, policy administration, and firmware management workflows. For segmented environments lacking direct Internet access, offline FortiGuard licensing procedures were executed to maintain signature and security subscription capabilities.",
     configurationAreas: [
       {
-        title: "Firewall Operating Modes & Interface Configuration",
+        title: "Firewall Operating Modes & Interfaces",
         description:
-          "Configured FortiGate operating modes—including Transparent Mode deployments—to inspect and filter transit traffic without requiring architectural IP redesign.",
+          "Configured interfaces and operational modes based on security zone requirements.",
         points: [
-          "Operating mode selection based on network boundary requirements",
-          "Interface binding, zone assignment, and administrative access controls",
-          "Network service connectivity verification",
+          "Configured interfaces for routed mode operation with IP addressing",
+          "Provisioned interfaces for transparent mode inline inspection where layer-2 insertion was required",
+          "Configured administrative access control lists (ACLs) per interface",
         ],
       },
       {
-        title: "Security Policy Administration & Access Control",
+        title: "Security Policies & Traffic Control",
         description:
-          "Constructed granular firewall rulebases controlling source/destination addresses, service ports, and action parameters across defined security zones.",
+          "Implemented stateful security policies regulating traffic flow between defined network zones.",
         points: [
-          "Stateful inspection rules for permitted communication paths",
-          "Explicit deny rules and default-drop security baselines",
-          "Logging enablement for policy hit tracking and traffic auditing",
+          "Defined source/destination address objects, services, and port profiles",
+          "Constructed firewall policy rulebases with explicit deny-by-default rules",
+          "Configured NAT parameters for outbound translation requirements",
         ],
       },
       {
-        title: "Network Management Services (NTP & Syslog)",
+        title: "Centralized Management Integration",
         description:
-          "Standardized time synchronization and event telemetry forwarding across all managed security gateways.",
+          "Enrolled FortiGate firewalls into FortiManager for centralized policy administration.",
         points: [
-          "Configured authoritative NTP sources for synchronized event timestamps",
-          "Established remote Syslog forwarding for security monitoring and audit compliance",
-          "Validated telemetry delivery and log message formatting",
+          "Registered and authorized FortiGate devices within FortiManager management domains",
+          "Verified configuration synchronization and policy package push status",
+          "Utilized device groups for standardized management across operational sites",
         ],
       },
       {
-        title: "FortiManager Centralized Administration & Device Authorization",
+        title: "Network Services & Offline Licensing",
         description:
-          "Configured FortiGate integration with FortiManager for centralized device management, policy administration, and firmware management workflows.",
+          "Configured infrastructure services and executed offline licensing workflows.",
         points: [
-          "Initiated device registration and administrative authorization",
-          "Verified managed status, configuration checksums, and in-sync state",
-          "Centralized policy package structuring and deployment workflows",
-          "Firmware management and image repository maintenance",
-        ],
-      },
-      {
-        title: "Offline FortiGuard Licensing Procedures",
-        description:
-          "Worked with offline FortiGuard licensing procedures for environments where direct Internet connectivity was unavailable.",
-        points: [
-          "Managed entitlement validation for isolated security enclaves",
-          "Applied offline license packages and signature updates to managed nodes",
-          "Confirmed active feature state and operational validation",
+          "Configured NTP server references to maintain uniform timestamp accuracy across logs",
+          "Configured remote Syslog forwarding for security event collection",
+          "Applied offline license files and entitlement updates for isolated network environments",
         ],
       },
     ],
     validationChecklist: [
-      "Verified firewall policy enforcement and traffic filtering behavior.",
-      "Confirmed NTP time synchronization accuracy across security appliances.",
-      "Validated Syslog telemetry generation and receipt on central logging endpoints.",
-      "Verified FortiManager managed connection status, device authorization, and in-sync policy state.",
-      "Confirmed offline FortiGuard license activation and security capability status.",
+      "Verified management-plane reachability (SSH/HTTPS) across designated subnets.",
+      "Confirmed firewall policy enforcement using test traffic streams.",
+      "Validated remote Syslog delivery and event ingestion on central log servers.",
+      "Confirmed NTP time synchronization across all managed FortiGate appliances.",
+      "Verified FortiManager synchronization and policy deployment status.",
     ],
     keyTechnicalLearnings: [
       "Practical understanding of FortiOS policy rulebases and evaluation order.",
@@ -124,10 +116,13 @@ export const caseStudiesData: CaseStudy[] = [
       "Importance of precise time synchronization (NTP) for security log correlation.",
     ],
     architectureFlow: [
-      { label: "Protected Network Zone", sublabel: "Workloads / Subnets", type: "source" },
-      { label: "FortiGate Firewall", sublabel: "Stateful Policy & Inspection", type: "security" },
-      { label: "FortiManager & Syslog", sublabel: "Centralized Orchestration & Logging", type: "destination" },
+      { label: "Protected Network Zone", sublabel: "Workloads / Segmented Subnets", type: "source" },
+      { label: "FortiGate Firewall", sublabel: "Stateful Inspection & Policy Enforcement", type: "security" },
+      { label: "FortiManager HA", sublabel: "Centralized Policy & Firmware Orchestration", type: "process" },
+      { label: "Syslog / SIEM Collector", sublabel: "Security Event Logging & Audit Trails", type: "destination" },
     ],
+    operationalRelevance:
+      "Provides a practical foundation for enterprise network troubleshooting, security policy evaluation, and fault isolation in my current NOC role. Hands-on exposure to FortiManager centralized administration and Syslog event correlation directly informs alarm analysis, incident escalation workflows, and security posture monitoring.",
     sanitizationDisclaimer:
       "All internal IP addresses, serial numbers, credentials, hostnames, and license identifiers have been omitted in compliance with confidentiality standards.",
   },
@@ -150,13 +145,23 @@ export const caseStudiesData: CaseStudy[] = [
       "OT Network Segmentation",
     ],
     publicDescription:
-          "Internship project experience configuring Hirschmann industrial switching infrastructure supporting Layer 2/Layer 3 networking, VLAN segmentation, inter-VLAN routing, static routing, redundancy and monitoring capabilities.",
-        metricSummary: "16+ Switches · Layer 3 Routing · VRRP",
+      "Hands-on technical experience during my Cybersecurity Analyst Internship configuring Hirschmann industrial switching with Layer 2/Layer 3 networking, VLAN segmentation, routing, redundancy, and monitoring.",
+    teaserMetric: "16+ Switches · Layer 3 Routing · VRRP",
     metrics: [
       {
         value: "16+",
         label: "Hirschmann Industrial Switches",
-        detail: "Layer 2/3 industrial switching infrastructure",
+        detail: "Hirschmann MTS2848 Layer 2/3 industrial switching infrastructure",
+      },
+      {
+        value: "Layer 3",
+        label: "Routing & Segmentation",
+        detail: "Inter-VLAN routing, static routes & VRRP gateway redundancy",
+      },
+      {
+        value: "HiOS",
+        label: "Operating System",
+        detail: "Industrial switch configuration, SPAN port mirroring & SNMP",
       },
     ],
     myRole: [
@@ -199,44 +204,34 @@ export const caseStudiesData: CaseStudy[] = [
         description:
           "Configured switched virtual interfaces (SVIs) and static routing tables to provide deterministic Layer 3 forwarding between isolated VLANs.",
         points: [
-          "Configured IP interfaces for inter-VLAN default gateways",
-          "Defined static route entries for deterministic next-hop path selection",
-          "Verified routing table state and packet forwarding paths",
+          "Assigned IP addresses and subnet masks to switched virtual interfaces (SVIs)",
+          "Configured static routes directing traffic toward upstream networks",
+          "Verified inter-VLAN routing tables and forwarding behavior",
         ],
       },
       {
-        title: "Gateway Redundancy (VRRP Master/Backup Priority)",
+        title: "Default Gateway Redundancy (VRRP)",
         description:
-          "Implemented Virtual Router Redundancy Protocol (VRRP) to provide high-availability default gateway services across redundant switches.",
+          "Configured Virtual Router Redundancy Protocol (VRRP) to eliminate single points of failure for industrial subnet gateways.",
         points: [
-          "Configured virtual IP addresses shared between switch pairs",
-          "Configured master/backup priority levels and preemption parameters",
-          "Tested gateway failover and convergence behavior",
+          "Defined VRRP virtual router IDs (VRIDs) and virtual IP addresses per VLAN",
+          "Set priority values to establish deterministic Master and Backup switch roles",
+          "Verified preemption behavior and deterministic failover responsiveness",
         ],
       },
       {
-        title: "SPAN / Port Mirroring & Network Telemetry",
+        title: "Network Visibility & Management Services",
         description:
-          "Implemented traffic-monitoring capabilities using SPAN/port mirroring and integrated network logging to support security monitoring and analysis.",
+          "Configured diagnostic, telemetry, and administrative services across all industrial switch units.",
         points: [
-          "Configured source monitoring ports and destination analyzer interfaces",
-          "Directed mirrored traffic to network inspection and security sensors",
-          "Validated non-intrusive packet capture across monitored interfaces",
-        ],
-      },
-      {
-        title: "SNMP, NTP & Remote Syslog Integration",
-        description:
-          "Standardized administrative telemetry, SNMP monitoring, and time synchronization across industrial switches.",
-        points: [
-          "Configured SNMP community strings and trap destinations for infrastructure monitoring",
-          "Established NTP synchronization for accurate switch system time",
-          "Forwarded system audit logs to central Syslog/SIEM platforms",
+          "Configured SPAN port mirroring to deliver duplicate packet streams to analysis probes",
+          "Configured SNMP monitoring parameters for health and link-state polling",
+          "Configured NTP time synchronization and remote Syslog export",
         ],
       },
     ],
     validationChecklist: [
-      "Verified VLAN tagging and isolation across access and trunk interfaces.",
+      "Confirmed VLAN segmentation and port-assignment verification across all access ports.",
       "Tested inter-VLAN routing and static next-hop reachability.",
       "Validated VRRP master/backup election states and virtual IP availability.",
       "Confirmed SPAN mirror session traffic delivery to analyzer interfaces.",
@@ -249,10 +244,13 @@ export const caseStudiesData: CaseStudy[] = [
       "Implementation of deterministic routing, SFP uplinks, and gateway redundancy.",
     ],
     architectureFlow: [
-      { label: "Industrial Endpoints / Subnets", sublabel: "Segmented VLANs", type: "source" },
-      { label: "Hirschmann MTS2848", sublabel: "Layer 3 Routing & Gateway Redundancy", type: "process" },
-      { label: "SPAN / Syslog Output", sublabel: "Traffic Mirror & SIEM Logging", type: "destination" },
+      { label: "Industrial Endpoints", sublabel: "Field Workstations & Control Subnets", type: "source" },
+      { label: "Hirschmann MTS2848", sublabel: "VLAN Segmentation & Layer 3 Routing", type: "process" },
+      { label: "VRRP Gateway Redundancy", sublabel: "Master / Backup Virtual Gateway", type: "security" },
+      { label: "SPAN & Syslog Monitoring", sublabel: "Traffic Mirror & Central SIEM Logging", type: "destination" },
     ],
+    operationalRelevance:
+      "Directly strengthens Layer 2 and Layer 3 fault isolation, VLAN segmentation diagnostics, and static routing troubleshooting across live telecom infrastructure. Practical experience with VRRP gateway failover, SFP uplinks, and SPAN traffic analysis supports rapid root-cause identification during network incident response.",
     sanitizationDisclaimer:
       "All physical plant locations, switch serials, internal IP schemes, and proprietary control systems are redacted in accordance with strict confidentiality protocols.",
   },
@@ -270,13 +268,23 @@ export const caseStudiesData: CaseStudy[] = [
       "OT/IT Segmentation",
     ],
     publicDescription:
-          "Internship project experience with Rail Data Diode infrastructure designed to enforce hardware-level unidirectional communication between network segments. Enforced hardware-level unidirectional OT-to-IT data transfer while eliminating the return communication path across the protected boundary.",
-        metricSummary: "16+ Data Diodes · Unidirectional OT→IT · Static ARP",
+      "Hands-on technical experience during my Cybersecurity Analyst Internship with Rail Data Diode infrastructure enforcing unidirectional OT-to-IT communication and protected network segmentation.",
+    teaserMetric: "16+ Data Diodes · Unidirectional OT→IT · Static ARP",
     metrics: [
       {
         value: "16+",
         label: "Rail Data Diodes",
-        detail: "Hardware-enforced unidirectional boundary units",
+        detail: "Hardware-enforced unidirectional boundary units configured",
+      },
+      {
+        value: "Hardware-Enforced",
+        label: "Simplex Isolation",
+        detail: "Hardware-Enforced Physical Unidirectional Isolation with zero return path",
+      },
+      {
+        value: "Static ARP",
+        label: "One-Way Routing",
+        detail: "Deterministic simplex telemetry delivery from OT to IT",
       },
     ],
     myRole: [
@@ -301,43 +309,34 @@ export const caseStudiesData: CaseStudy[] = [
       "The deployment established a physical-layer unidirectional boundary between critical OT operational networks and IT monitoring infrastructure using Rail Data Diode hardware. Because true hardware data diodes physically disconnect the return transmit path, ensuring that the protected OT-side interface has no physical return communication path across the diode boundary, dedicated static ARP entries, VLAN interfaces, and deterministic static routing were configured across the Hirschmann HiOS switching layer. This enabled continuous operational telemetry transfer while enforcing strict physical simplex flow.",
     configurationAreas: [
       {
-        title: "Hardware-Enforced Unidirectional Boundary",
+        title: "Diode Interface & Boundary Integration",
         description:
-          "Established physical and optical single-direction transmission path ensuring absolute physical separation of inbound and outbound signals.",
+          "Configured the designated OT-side and IT-side interfaces according to the approved unidirectional deployment architecture.",
         points: [
-          "Physical separation of Data OUT (transmit only) and Data IN (receive only) interfaces",
-          "Elimination of backchannel signaling and reverse network communication paths",
-          "Verification of physical-layer unidirectional enforcement",
+          "Configured the designated OT-side and IT-side interfaces according to the approved unidirectional deployment architecture",
+          "Assigned static IP configurations per interface segment",
+          "Verified physical link state and optical transceivers on both sides of the boundary",
         ],
       },
       {
-        title: "Boundary VLANs & Interface Segregation",
+        title: "Switch Static Routing & ARP Configuration",
         description:
-          "Configured isolated boundary VLANs on Hirschmann HiOS switches to segregate diode ingress and egress data streams.",
+          "Configured connected Hirschmann switches to support unidirectional transmission.",
         points: [
-          "Configured dedicated source VLAN on OT aggregation switch",
-          "Configured dedicated destination VLAN on IT monitoring receiver switch",
-          "Enforced strict interface isolation preventing bypass paths",
+          "Configured static ARP entries for diode interface addresses to enable MAC resolution without reverse queries",
+          "Configured deterministic static routes directed through the diode transmission path",
+          "Maintained strict one-way packet delivery without bidirectional signaling",
         ],
       },
       {
-        title: "Static ARP & Deterministic Routing",
+        title: "Validation & Testing",
         description:
-          "Configured VLAN and routing interfaces and supported static ARP and routing requirements associated with the hardware-enforced one-way communication architecture.",
+          "Conducted functional and security testing of the diode deployment.",
         points: [
-          "Configured static ARP mappings on source switches to resolve destination MACs without bidirectional ARP queries",
-          "Configured static route entries directing telemetry payloads toward the diode transmitter",
-          "Maintained deterministic packet forwarding under unidirectional constraints",
-        ],
-      },
-      {
-        title: "Simplex Telemetry Export & Boundary Verification",
-        description:
-          "Enforced strict architectural separation between operational networks and enterprise monitoring tiers.",
-        points: [
-          "Validated one-way data flow from OT source network to IT destination",
-          "Confirmed zero packet leakage or reverse communication channels",
-          "Validated monitoring receiver ingestion of operational data",
+          "Verified forward telemetry transmission (OT to IT) operated correctly",
+          "Confirmed complete failure of reverse connection attempts (IT to OT)",
+          "Verified syslog and telemetry flow to destination collectors",
+          "Documented test procedures and results for operational handover",
         ],
       },
     ],
@@ -355,12 +354,14 @@ export const caseStudiesData: CaseStudy[] = [
       "Best practices for secure OT telemetry export without compromising critical network isolation.",
     ],
     architectureFlow: [
-      { label: "OT / Source Network", sublabel: "Critical Control / Telemetry", type: "source" },
-      { label: "Data OUT", sublabel: "Egress Interface", type: "process" },
-      { label: "Hardware-Enforced One-Way Communication", sublabel: "Physical Diode Boundary", type: "security" },
-      { label: "Data IN", sublabel: "Ingress Interface", type: "process" },
+      { label: "OT / Source Network", sublabel: "Critical Operational Subnet", type: "source" },
+      { label: "DATA-OUT (OT TX)", sublabel: "Simplex Egress & Static ARP", type: "process" },
+      { label: "Hardware Diode Barrier", sublabel: "Hardware-Enforced Simplex (Zero Reverse Path)", type: "security" },
+      { label: "DATA-IN (IT RX)", sublabel: "Simplex Ingress Interface", type: "process" },
       { label: "IT / Monitoring Network", sublabel: "Centralized Telemetry Analysis", type: "destination" },
     ],
+    operationalRelevance:
+      "Reinforces rigorous mental models of deterministic one-way traffic flow, static ARP packet handling, and strict network boundary segmentation. This foundation enables rapid diagnostic triage of interface anomalies, transit flow disruptions, and secure boundary enforcement in operational environments.",
     sanitizationDisclaimer:
       "All physical facility details, IP addresses, MAC addresses, internal VLAN IDs, device identifiers, and proprietary protocols are omitted for security confidentiality.",
   },
@@ -378,13 +379,24 @@ export const caseStudiesData: CaseStudy[] = [
       "Bash/Shell",
     ],
     publicDescription:
-      "Internship project experience deploying virtual-machine infrastructure on Ubuntu-based KVM/QEMU servers, including QCOW2 image provisioning, Linux bridge networking and VM creation through virt-manager.",
-    metricSummary: "5+ Servers · KVM/QEMU · Ubuntu Linux",
+      "Hands-on technical experience during my Cybersecurity Analyst Internship provisioning Ubuntu-based KVM/QEMU virtualization with QCOW2 storage, Linux bridge networking, and virt-manager.",
+    teaserMetric: "16+ Servers · KVM/QEMU · Ubuntu Linux",
     metrics: [
       {
-        value: "5+",
-        label: "Bare-Metal Virtualization Servers",
-        detail: "Ubuntu Server KVM/QEMU hosts",
+        value: "16+",
+        label: "Tyrone Bare-Metal Servers",
+        detail: "Ubuntu Server bare-metal KVM/QEMU virtualization hosts",
+      },
+      {
+        value: "KVM / QEMU",
+        label: "Hypervisor Engine",
+        detail: "Kernel-based Virtual Machine virtualization with virt-manager & virsh",
+      },
+      {
+        value: "Linux Bridge",
+        label: "Virtual Networking",
+        detail:
+          "Layer 2 software bridge (br0) providing network connectivity between guest VMs and physical network segments.",
       },
     ],
     myRole: [
@@ -398,7 +410,7 @@ export const caseStudiesData: CaseStudy[] = [
     objective:
       "Deploy, configure, and maintain Linux-based kernel virtualization infrastructure to host virtualized security appliances and testbed systems using open-source hypervisor tooling.",
     environment:
-      "Ubuntu Server bare-metal infrastructure hosting Kernel-based Virtual Machine (KVM) and QEMU hypervisor components.",
+      "Ubuntu Server bare-metal infrastructure hosting Kernel-based Virtual Machine (KVM) and QEMU hypervisor components across 16+ Tyrone bare-metal servers.",
     responsibilities: [
       "Configured KVM kernel modules, QEMU virtualization engine, and libvirt daemon on Ubuntu Server.",
       "Configured Linux software bridging (br0) to connect virtual machine interfaces to physical networks.",
@@ -408,7 +420,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Validated VM network connectivity, hypervisor operation, and service availability.",
     ],
     implementation:
-      "The deployment established virtualization infrastructure on Ubuntu Server utilizing KVM and QEMU. Linux network bridging was configured to provide Layer 2 network connectivity between hosted virtual machines and physical network segments. Virtual machine storage was configured using the QCOW2 format to support virtual disk provisioning. VM creation, configuration, and resource assignments were orchestrated through virt-manager and virsh management tools.",
+      "The deployment established virtualization infrastructure on Ubuntu Server utilizing KVM and QEMU across 16+ Tyrone bare-metal servers. Linux network bridging was configured to provide Layer 2 network connectivity between hosted virtual machines and physical network segments. Virtual machine storage was configured using the QCOW2 format to support virtual disk provisioning. VM creation, configuration, and resource assignments were orchestrated through virt-manager and virsh management tools.",
     configurationAreas: [
       {
         title: "KVM/QEMU Hypervisor Host Setup",
@@ -465,12 +477,13 @@ export const caseStudiesData: CaseStudy[] = [
       "Management workflows combining virt-manager GUI with virsh command-line tooling.",
     ],
     architectureFlow: [
-      { label: "Ubuntu Server", sublabel: "Host OS & Hardware Layer", type: "source" },
-      { label: "KVM/QEMU", sublabel: "Hypervisor & Emulation", type: "process" },
-      { label: "Linux Bridge", sublabel: "Layer 2 Virtual Switching", type: "process" },
-      { label: "Security VM", sublabel: "Guest Workload", type: "security" },
-      { label: "QCOW2 Virtual Disk", sublabel: "Storage Volume", type: "destination" },
+      { label: "Tyrone Bare-Metal Host", sublabel: "Ubuntu Server Host OS & Hardware Virtualization", type: "source" },
+      { label: "KVM / QEMU Hypervisor", sublabel: "Kernel Modules & virt-manager / virsh CLI", type: "process" },
+      { label: "Linux Bridge (br0) & Storage", sublabel: "Layer 2 Virtual Switching + QCOW2 Volumes", type: "process" },
+      { label: "Guest Security VMs", sublabel: "Isolated Ubuntu Security Appliances & Rsyslog", type: "security" },
     ],
+    operationalRelevance:
+      "Underpins Linux-level host/guest diagnostics, virtual bridge (br0) network troubleshooting, and server resource monitoring. Hands-on administration of hypervisor storage, interface binding, and rsyslog telemetry directly translates to diagnosing virtual appliance availability and infrastructure monitoring alerts.",
     sanitizationDisclaimer:
       "Server IP addresses, credentials, hostnames, file paths, and internal identifiers are omitted for security confidentiality.",
   },

@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/Button";
 import { profileData } from "@/data/profile";
 
 const navLinks = [
-  { name: "About", href: "/#about" },
-  { name: "Experience", href: "/#experience" },
+  { name: "Experience", href: "/#current-experience" },
   { name: "Case Studies", href: "/#case-studies" },
-  { name: "Learning", href: "/#learning" },
   { name: "Skills", href: "/#skills" },
+  { name: "Certifications", href: "/#certifications" },
+  { name: "Education", href: "/#education" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -33,7 +33,7 @@ export function Navbar() {
                 {profileData.name}
               </span>
               <span className="text-[10px] font-mono text-slate-400">
-                Network Engineer | Cybersecurity & OT Security
+                Network Engineer | Network Security & OT/IT Infrastructure
               </span>
             </div>
           </Link>

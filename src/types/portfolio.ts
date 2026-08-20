@@ -1,6 +1,6 @@
 // Evidence-based skill classification types
 export type SkillEvidence =
-  | "Internship Project Experience"
+  | "Professional Internship Experience"
   | "Technical Experience"
   | "Currently Learning";
 
@@ -37,16 +37,19 @@ export interface CurrentPosition {
 export interface PreviousInternship {
   title: string;
   role: string;
+  organization?: string;
   period?: string;
   domain: string;
   summary: string;
+  verifiedMetrics?: string[];
+  keyHighlights?: string[];
   cards: Array<{
     id: string;
     title: string;
     area: string;
     summary: string;
     technologies: string[];
-    caseStudyUrl: string;
+    caseStudyUrl?: string;
   }>;
 }
 
@@ -92,6 +95,7 @@ export interface CaseStudy {
   validationChecklist: string[];
   keyTechnicalLearnings: string[];
   architectureFlow?: CaseStudyArchitectureNode[];
+  operationalRelevance?: string;
   sanitizationDisclaimer?: string;
 }
 
@@ -183,6 +187,15 @@ export interface CertificationItem {
   credentialId?: string;
   verificationUrl?: string;
   date: string;
+}
+
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  details?: string;
 }
 
 export interface GithubRepo {

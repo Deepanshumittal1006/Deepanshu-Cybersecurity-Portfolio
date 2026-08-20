@@ -1,20 +1,17 @@
 import { ProfileData } from "@/types/portfolio";
 
 export const profileData: ProfileData = {
-  name: "Deepanshu",
-  primaryTitle: "Network Engineer specializing in Security & OT Infrastructure",
+  name: "Deepanshu Mittal",
+  primaryTitle: "Network Engineer | NOC / L1 Support | Network Security & OT/IT Infrastructure",
   currentRole: "Currently: Network Engineer — NOC / L1 Support at iLayer Solution LLP",
   secondaryTitles: [
     "Network Security",
-    "OT/IT Security",
-    "Firewall Security",
+    "OT/IT Infrastructure",
     "Industrial Networking",
-    "Security Monitoring",
-    "Telecom Network Operations",
-    "NOC & Fault Management",
+    "Telecom NOC Operations",
   ],
   location: "India",
-  bio: "Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, cybersecurity deployment, and industrial OT/IT environments. Experienced with Huawei telecom infrastructure, Fortinet security platforms, industrial networking, and infrastructure virtualization.",
+  bio: "Currently working in enterprise telecom network operations, with prior hands-on experience as a Cybersecurity Analyst Intern deploying 90+ firewalls, 16+ industrial switches, 16+ data diodes, and security infrastructure across 16+ Tyrone bare-metal servers.",
   defensePrinciples: [
     "Network segmentation & micro-perimeter isolation",
     "Secure communications & encrypted transport",
@@ -30,5 +27,4 @@ export const profileData: ProfileData = {
     resumeUrl: "/assets/Deepanshu_Resume.pdf",
     formspreeEndpoint: "https://formspree.io/f/xwlewpyy",
   },
-
 };

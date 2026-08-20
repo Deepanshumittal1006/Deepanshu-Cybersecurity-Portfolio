@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/Button";
 
 interface ContactFormProps {
   formEndpoint?: string; // Formspree endpoint, e.g. https://formspree.io/f/XXXXXXXX
+  recipientEmail?: string;
 }
 
-export function ContactForm({ formEndpoint }: ContactFormProps) {
+export function ContactForm({ formEndpoint, recipientEmail }: ContactFormProps) {
   const [name, setName] = useState("");
   const [organization, setOrganization] = useState("");
   const [email, setEmail] = useState("");
@@ -51,8 +52,17 @@ export function ContactForm({ formEndpoint }: ContactFormProps) {
     }
 
     if (!formEndpoint) {
+      if (recipientEmail) {
+        setStatus("success");
+        const subject = `Portfolio Contact — ${name.trim()}`;
+        const body = `Name: ${name.trim()}\nOrganization: ${organization.trim()}\nEmail: ${email.trim()}\n\nMessage:\n${message.trim()}`;
+        window.location.href = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(body)}`;
+        return;
+      }
       setStatus("error");
-      setErrorMessage("Form submission endpoint is not configured. Please provide a Formspree endpoint to enable form submissions.");
+      setErrorMessage("Form submission endpoint is not configured. Please contact directly via email.");
       return;
     }
 

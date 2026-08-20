@@ -18,7 +18,7 @@ export function Badge({
 }: BadgeProps) {
   if (evidenceType) {
     const evidenceStyles: Record<SkillEvidence, string> = {
-      "Internship Project Experience":
+      "Professional Internship Experience":
         "bg-emerald-950/70 text-emerald-300 border-emerald-700/50 hover:border-emerald-600/70",
       "Technical Experience":
         "bg-sky-950/70 text-sky-300 border-sky-700/50 hover:border-sky-600/70",

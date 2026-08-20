@@ -28,11 +28,11 @@ export function Footer() {
               Navigation
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs text-slate-400">
-              <Link href="/#about" className="hover:text-sky-300 transition-colors">About</Link>
-              <Link href="/#experience" className="hover:text-sky-300 transition-colors">Experience</Link>
+              <Link href="/#current-experience" className="hover:text-sky-300 transition-colors">Experience</Link>
               <Link href="/#case-studies" className="hover:text-sky-300 transition-colors">Case Studies</Link>
-              <Link href="/#learning" className="hover:text-sky-300 transition-colors">Learning Journey</Link>
               <Link href="/#skills" className="hover:text-sky-300 transition-colors">Skills Matrix</Link>
+              <Link href="/#certifications" className="hover:text-sky-300 transition-colors">Certifications</Link>
+              <Link href="/#education" className="hover:text-sky-300 transition-colors">Education</Link>
               <Link href="/#contact" className="hover:text-sky-300 transition-colors">Contact</Link>
             </div>
           </div>

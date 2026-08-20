@@ -23,9 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Deepanshu | Network Engineer — Cybersecurity & OT Security",
+  title: "Deepanshu Mittal | Network Engineer — Cybersecurity & OT Security",
   description:
-    "Professional portfolio of Deepanshu — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
+    "Professional portfolio of Deepanshu Mittal — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
   keywords: [
     "Network Engineer",
     "Cybersecurity",
@@ -37,20 +37,20 @@ export const metadata: Metadata = {
     "Hirschmann",
     "KVM Virtualization",
   ],
-  authors: [{ name: "Deepanshu" }],
+  authors: [{ name: "Deepanshu Mittal" }],
   robots: "index, follow",
   openGraph: {
-    title: "Deepanshu | Network Engineer — Cybersecurity & OT Security",
+    title: "Deepanshu Mittal | Network Engineer — Cybersecurity & OT Security",
     description:
-      "Professional portfolio of Deepanshu — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
+      "Professional portfolio of Deepanshu Mittal — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deepanshu | Network Engineer — Cybersecurity & OT Security",
+    title: "Deepanshu Mittal | Network Engineer — Cybersecurity & OT Security",
     description:
-      "Professional portfolio of Deepanshu — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
+      "Professional portfolio of Deepanshu Mittal — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
   },
 };
 

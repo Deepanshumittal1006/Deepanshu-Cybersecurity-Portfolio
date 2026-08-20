@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, ChevronRight, Layers } from "lucide-react";
+import { ArrowLeft, ChevronRight, Layers, Building2 } from "lucide-react";
 import { TechTag } from "@/components/ui/TechTag";
 import { Badge } from "@/components/ui/Badge";
 
@@ -37,11 +37,14 @@ export function CaseStudyHeader({
       </div>
 
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs font-mono text-sky-300 bg-sky-950/70 border border-sky-800/60 px-2.5 py-1 rounded">
             {category}
           </span>
-          <Badge variant="subtle">Internship Case Study</Badge>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-mono bg-slate-900/90 text-slate-300 border border-slate-700/80">
+            <Building2 className="w-3.5 h-3.5 text-sky-400" />
+            <span>ARPR Techsol Pvt. Ltd. · Professional Internship Experience</span>
+          </span>
         </div>
 
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-[1.15]">

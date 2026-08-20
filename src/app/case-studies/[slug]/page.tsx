@@ -17,6 +17,7 @@ import { caseStudiesData, getCaseStudyBySlug } from "@/data/caseStudies";
 import { CaseStudyHeader } from "@/components/case-study/CaseStudyHeader";
 import { CaseStudyMetrics } from "@/components/case-study/CaseStudyMetrics";
 import { CaseStudyArchitectureDiagram } from "@/components/case-study/CaseStudyArchitectureDiagram";
+import { TechnicalDeepDive } from "@/components/case-study/TechnicalDeepDive";
 import { CaseStudyNav } from "@/components/case-study/CaseStudyNav";
 import { Card } from "@/components/ui/Card";
 
@@ -115,144 +116,150 @@ export default function CaseStudyPage({ params }: PageProps) {
       {study.architectureFlow && (
         <CaseStudyArchitectureDiagram
           title="Sanitized Conceptual Architecture Flow"
+          slug={study.slug}
           nodes={study.architectureFlow}
         />
       )}
 
-      {/* 9. Engineering Responsibilities */}
-      <section className="space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-          <Wrench className="w-4 h-4 text-sky-400" />
-          <h2 className="text-lg font-bold text-slate-100">
-            Engineering Responsibilities
-          </h2>
-        </div>
-        <Card variant="default">
-          <ul className="space-y-2.5 text-sm text-slate-300">
-            {study.responsibilities.map((resp, idx) => (
-              <li key={idx} className="flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-2" />
-                <span className="leading-relaxed">{resp}</span>
-              </li>
-            ))}
-          </ul>
-        </Card>
-      </section>
+      {/* Layer 2: Expandable Technical Deep Dive Area */}
+      <TechnicalDeepDive>
+        {/* 9. Engineering Responsibilities */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+            <Wrench className="w-4 h-4 text-sky-400" />
+            <h2 className="text-lg font-bold text-slate-100">
+              Engineering Responsibilities
+            </h2>
+          </div>
+          <Card variant="default">
+            <ul className="space-y-2.5 text-sm text-slate-300">
+              {study.responsibilities.map((resp, idx) => (
+                <li key={idx} className="flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-2" />
+                  <span className="leading-relaxed">{resp}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </section>
 
-      {/* 10. Technical Implementation */}
-      <section className="space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-          <Layers className="w-4 h-4 text-sky-400" />
-          <h2 className="text-lg font-bold text-slate-100">
-            Technical Implementation
-          </h2>
-        </div>
-        <Card variant="default">
-          <p className="text-sm text-slate-300 leading-relaxed">
-            {study.implementation}
-          </p>
-        </Card>
-      </section>
+        {/* 10. Technical Implementation */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+            <Layers className="w-4 h-4 text-sky-400" />
+            <h2 className="text-lg font-bold text-slate-100">
+              Technical Implementation
+            </h2>
+          </div>
+          <Card variant="default">
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {study.implementation}
+            </p>
+          </Card>
+        </section>
 
-      {/* 11. Key Configuration Areas */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-          <Terminal className="w-4 h-4 text-sky-400" />
-          <h2 className="text-lg font-bold text-slate-100">
-            Key Configuration Areas
-          </h2>
-        </div>
+        {/* 11. Key Configuration Areas */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+            <Terminal className="w-4 h-4 text-sky-400" />
+            <h2 className="text-lg font-bold text-slate-100">
+              Key Configuration Areas
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {study.configurationAreas.map((area, idx) => (
-            <Card key={idx} variant="elevated" className="space-y-3">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="text-sm font-bold text-slate-100">
-                  {area.title}
-                </h3>
-                <span className="text-[10px] font-mono text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
-                  Area 0{idx + 1}
-                </span>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {study.configurationAreas.map((area, idx) => (
+              <Card key={idx} variant="elevated" className="space-y-3">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-bold text-slate-100">
+                    {area.title}
+                  </h3>
+                  <span className="text-[10px] font-mono text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
+                    Area 0{idx + 1}
+                  </span>
+                </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {area.description}
-              </p>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {area.description}
+                </p>
 
-              {area.points && (
-                <ul className="space-y-1.5 pt-2 border-t border-slate-800/80 text-xs text-slate-400 font-mono">
-                  {area.points.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-1.5">
-                      <span className="text-sky-400 font-bold">›</span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* 12. Validation & Verification */}
-      <section className="space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-          <ListChecks className="w-4 h-4 text-teal-400" />
-          <h2 className="text-lg font-bold text-slate-100">
-            Validation & Verification
-          </h2>
-        </div>
-
-        <Card variant="default">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {study.validationChecklist.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-2.5 p-2.5 rounded-lg bg-slate-900/70 border border-slate-800/80 text-xs text-slate-300"
-              >
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="leading-snug">{item}</span>
-              </div>
+                {area.points && (
+                  <ul className="space-y-1.5 pt-2 border-t border-slate-800/80 text-xs text-slate-400 font-mono">
+                    {area.points.map((pt, pIdx) => (
+                      <li key={pIdx} className="flex items-start gap-1.5">
+                        <span className="text-sky-400 font-bold">›</span>
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Card>
             ))}
           </div>
-        </Card>
-      </section>
+        </section>
 
-      {/* 13. Technical Learnings */}
-      <section className="space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-          <Lightbulb className="w-4 h-4 text-amber-400" />
-          <h2 className="text-lg font-bold text-slate-100">
-            Technical Learnings
-          </h2>
-        </div>
+        {/* 12. Validation & Verification */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+            <ListChecks className="w-4 h-4 text-teal-400" />
+            <h2 className="text-lg font-bold text-slate-100">
+              Validation & Verification
+            </h2>
+          </div>
 
-        <Card variant="default">
-          <ul className="space-y-2.5 text-sm text-slate-300">
-            {study.keyTechnicalLearnings.map((learning, idx) => (
-              <li key={idx} className="flex items-start gap-2.5">
-                <span className="text-amber-400 font-bold text-xs mt-0.5 font-mono">
-                  [0{idx + 1}]
-                </span>
-                <span className="leading-relaxed">{learning}</span>
-              </li>
-            ))}
-          </ul>
-        </Card>
-      </section>
+          <Card variant="default">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {study.validationChecklist.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start gap-2.5 p-2.5 rounded-lg bg-slate-900/70 border border-slate-800/80 text-xs text-slate-300"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </section>
 
-      {/* 14. How this experience applies today (bridge to current role) */}
-      <section className="space-y-3">
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-          <Lightbulb className="w-4 h-4 text-amber-400" />
-          <h2 className="text-lg font-bold text-slate-100">How this experience applies today</h2>
-        </div>
-        <Card variant="default">
-          <p className="text-sm text-slate-300 leading-relaxed">
-            This internship project experience provides a foundation for network troubleshooting, fault isolation, and operational visibility in my current NOC role. The hands-on configuration and monitoring practices applied during the internship directly support ticket handling, escalation workflows, and infrastructure observability required for effective NOC/L1 support.
-          </p>
-        </Card>
-      </section>
+        {/* 13. Technical Learnings */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+            <Lightbulb className="w-4 h-4 text-amber-400" />
+            <h2 className="text-lg font-bold text-slate-100">
+              Technical Learnings
+            </h2>
+          </div>
+
+          <Card variant="default">
+            <ul className="space-y-2.5 text-sm text-slate-300">
+              {study.keyTechnicalLearnings.map((learning, idx) => (
+                <li key={idx} className="flex items-start gap-2.5">
+                  <span className="text-amber-400 font-bold text-xs mt-0.5 font-mono">
+                    [0{idx + 1}]
+                  </span>
+                  <span className="leading-relaxed">{learning}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </section>
+
+        {/* 14. Current Operational Relevance */}
+        {study.operationalRelevance && (
+          <section className="space-y-3">
+            <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
+              <Lightbulb className="w-4 h-4 text-amber-400" />
+              <h2 className="text-lg font-bold text-slate-100">Current Operational Relevance</h2>
+            </div>
+            <Card variant="default">
+              <p className="text-sm text-slate-300 leading-relaxed">
+                {study.operationalRelevance}
+              </p>
+            </Card>
+          </section>
+        )}
+      </TechnicalDeepDive>
 
       {/* 15. Footer Sanitization Disclaimer & Navigation */}
       {study.sanitizationDisclaimer && (
