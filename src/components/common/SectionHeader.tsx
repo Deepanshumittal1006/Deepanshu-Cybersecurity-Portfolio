@@ -10,31 +10,29 @@ interface SectionHeaderProps {
 }
 
 export function SectionHeader({
-  index,
   categoryBadge,
   title,
   subtitle,
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-10 sm:mb-12", className)}>
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        {index && (
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-cyber-blue-light bg-sky-950/60 border border-sky-800/40 px-2 py-0.5 rounded">
-            {index}
-          </span>
-        )}
-        {categoryBadge && (
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-cyber-teal-light bg-teal-950/60 border border-teal-800/40 px-2 py-0.5 rounded">
-            {categoryBadge}
-          </span>
-        )}
+    <div className={cn("mb-12 sm:mb-16 relative", className)}>
+      {categoryBadge && (
+        <span className="font-mono text-[11px] uppercase tracking-widest text-electric-blue block mb-4">
+          {categoryBadge}
+        </span>
+      )}
+      
+      <div className="relative inline-block mb-4">
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display relative z-10">
+          {title}
+        </h2>
+        {/* Subtle cyan accent/underline/glow */}
+        <div className="absolute -bottom-2 sm:-bottom-3 left-0 w-1/3 h-1 bg-cyan shadow-[0_0_12px_rgba(0,245,212,0.8)] rounded-full" />
       </div>
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-100">
-        {title}
-      </h2>
+
       {subtitle && (
-        <p className="mt-2.5 text-base sm:text-lg text-slate-400 max-w-3xl leading-relaxed">
+        <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-3xl leading-relaxed font-light">
           {subtitle}
         </p>
       )}

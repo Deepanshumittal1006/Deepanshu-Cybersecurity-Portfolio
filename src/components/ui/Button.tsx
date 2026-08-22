@@ -23,23 +23,23 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:opacity-50 disabled:pointer-events-none rounded-lg";
+    "inline-flex items-center justify-center font-medium transition-all duration-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B14] disabled:opacity-50 disabled:pointer-events-none rounded-xl";
 
   const sizeStyles = {
-    sm: "px-3 py-1.5 text-xs gap-1.5",
-    md: "px-4 py-2 text-sm gap-2",
-    lg: "px-6 py-2.5 text-base gap-2.5",
+    sm: "px-4 py-2 text-xs gap-2 font-semibold",
+    md: "px-6 py-3 text-sm gap-2 font-bold",
+    lg: "px-8 py-4 text-base gap-3 font-bold",
   };
 
   const variantStyles = {
     primary:
-      "bg-cyber-blue hover:bg-sky-500 text-white shadow-sm shadow-sky-950/50",
+      "bg-cyan/10 hover:bg-cyan/20 text-cyan-300 border border-cyan-500/50 shadow-[0_0_15px_rgba(0,245,212,0.15)] hover:shadow-[0_0_25px_rgba(0,245,212,0.3)]",
     secondary:
-      "bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700/80",
+      "bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20",
     outline:
-      "bg-transparent hover:bg-slate-800/60 text-slate-200 border border-slate-700 hover:border-slate-600",
+      "bg-transparent hover:bg-electric-blue/10 text-slate-200 border border-white/10 hover:border-electric-blue/50 hover:text-electric-blue hover:shadow-[0_0_20px_rgba(0,168,255,0.15)]",
     ghost:
-      "bg-transparent hover:bg-slate-800/60 text-slate-300 hover:text-white",
+      "bg-transparent hover:bg-white/5 text-slate-300 hover:text-white",
   };
 
   const content = (

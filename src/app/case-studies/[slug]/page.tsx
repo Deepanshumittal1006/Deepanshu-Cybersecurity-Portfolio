@@ -1,25 +1,14 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import {
-  Shield,
-  CheckCircle2,
-  ListChecks,
-  Lightbulb,
-  Terminal,
-  Server,
-  Layers,
-  Wrench,
-  UserCheck,
-  Target,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { caseStudiesData, getCaseStudyBySlug } from "@/data/caseStudies";
 import { CaseStudyHeader } from "@/components/case-study/CaseStudyHeader";
 import { CaseStudyMetrics } from "@/components/case-study/CaseStudyMetrics";
 import { CaseStudyArchitectureDiagram } from "@/components/case-study/CaseStudyArchitectureDiagram";
 import { TechnicalDeepDive } from "@/components/case-study/TechnicalDeepDive";
 import { CaseStudyNav } from "@/components/case-study/CaseStudyNav";
-import { Card } from "@/components/ui/Card";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 interface PageProps {
   params: {
@@ -71,45 +60,40 @@ export default function CaseStudyPage({ params }: PageProps) {
 
       {/* 5. My Role */}
       {study.myRole && study.myRole.length > 0 && (
-        <section className="space-y-4">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-            <UserCheck className="w-4 h-4 text-sky-400" />
-            <h2 className="text-lg font-bold text-slate-100">My Role</h2>
-          </div>
-          <Card variant="elevated">
-            <ul className="space-y-2.5 text-sm text-slate-300">
+        <section className="space-y-6">
+          <SectionHeader title="My Role" />
+          <div className="pl-4 sm:pl-8 border-l border-white/10 ml-2">
+            <ul className="space-y-4 text-base text-slate-300 font-light">
               {study.myRole.map((roleItem, idx) => (
-                <li key={idx} className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-2" />
+                <li key={idx} className="flex items-start gap-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan shrink-0 mt-2 shadow-[0_0_8px_rgba(0,245,212,0.8)]" />
                   <span className="leading-relaxed">{roleItem}</span>
                 </li>
               ))}
             </ul>
-          </Card>
+          </div>
         </section>
       )}
 
       {/* 6 & 7. Engagement Objective & Target Environment */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card variant="default" className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-sky-400">
-            <Target className="w-4 h-4 text-sky-400" />
-            <span>Engagement Objective</span>
-          </div>
-          <p className="text-sm text-slate-300 leading-relaxed">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="space-y-4">
+          <h3 className="text-sm font-mono text-cyan uppercase tracking-widest">
+            Engagement Objective
+          </h3>
+          <p className="text-lg text-slate-300 leading-relaxed font-light">
             {study.objective}
           </p>
-        </Card>
+        </div>
 
-        <Card variant="default" className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-teal-400">
-            <Server className="w-4 h-4 text-teal-400" />
-            <span>Target Environment (Sanitized)</span>
-          </div>
-          <p className="text-sm text-slate-300 leading-relaxed">
+        <div className="space-y-4">
+          <h3 className="text-sm font-mono text-cyan uppercase tracking-widest">
+            Target Environment (Sanitized)
+          </h3>
+          <p className="text-lg text-slate-300 leading-relaxed font-light">
             {study.environment}
           </p>
-        </Card>
+        </div>
       </div>
 
       {/* 8. Sanitized Conceptual Architecture */}
@@ -124,139 +108,109 @@ export default function CaseStudyPage({ params }: PageProps) {
       {/* Layer 2: Expandable Technical Deep Dive Area */}
       <TechnicalDeepDive>
         {/* 9. Engineering Responsibilities */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-            <Wrench className="w-4 h-4 text-sky-400" />
-            <h2 className="text-lg font-bold text-slate-100">
-              Engineering Responsibilities
-            </h2>
-          </div>
-          <Card variant="default">
-            <ul className="space-y-2.5 text-sm text-slate-300">
+        <section className="space-y-6">
+          <SectionHeader title="Engineering Responsibilities" />
+          <div className="pl-4 sm:pl-8 border-l border-white/10 ml-2">
+            <ul className="space-y-4 text-base text-slate-300 font-light">
               {study.responsibilities.map((resp, idx) => (
-                <li key={idx} className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-2" />
+                <li key={idx} className="flex items-start gap-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan shrink-0 mt-2 shadow-[0_0_8px_rgba(0,245,212,0.8)]" />
                   <span className="leading-relaxed">{resp}</span>
                 </li>
               ))}
             </ul>
-          </Card>
+          </div>
         </section>
 
         {/* 10. Technical Implementation */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-            <Layers className="w-4 h-4 text-sky-400" />
-            <h2 className="text-lg font-bold text-slate-100">
-              Technical Implementation
-            </h2>
-          </div>
-          <Card variant="default">
-            <p className="text-sm text-slate-300 leading-relaxed">
+        <section className="space-y-6 pt-8">
+          <SectionHeader title="Technical Implementation" />
+          <div className="pl-4 sm:pl-8 border-l border-white/10 ml-2">
+            <p className="text-lg text-slate-300 leading-relaxed font-light">
               {study.implementation}
             </p>
-          </Card>
+          </div>
         </section>
 
         {/* 11. Key Configuration Areas */}
-        <section className="space-y-6">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-            <Terminal className="w-4 h-4 text-sky-400" />
-            <h2 className="text-lg font-bold text-slate-100">
-              Key Configuration Areas
-            </h2>
-          </div>
+        <section className="space-y-8 pt-8">
+          <SectionHeader title="Key Configuration Areas" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-2 sm:pl-4">
             {study.configurationAreas.map((area, idx) => (
-              <Card key={idx} variant="elevated" className="space-y-3">
+              <div key={idx} className="py-6 px-6 sm:px-8 border border-white/10 bg-white/5 space-y-4">
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-bold text-slate-100">
+                  <h3 className="text-base font-bold text-slate-100">
                     {area.title}
                   </h3>
-                  <span className="text-[10px] font-mono text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
-                    Area 0{idx + 1}
+                  <span className="text-[10px] font-mono text-cyan bg-cyan/10 px-2 py-0.5 rounded border border-cyan/20">
+                    Area
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-base text-slate-300 leading-relaxed font-light">
                   {area.description}
                 </p>
 
                 {area.points && (
-                  <ul className="space-y-1.5 pt-2 border-t border-slate-800/80 text-xs text-slate-400 font-mono">
+                  <ul className="space-y-2 pt-4 border-t border-white/10 text-sm text-slate-400 font-mono">
                     {area.points.map((pt, pIdx) => (
-                      <li key={pIdx} className="flex items-start gap-1.5">
-                        <span className="text-sky-400 font-bold">›</span>
+                      <li key={pIdx} className="flex items-start gap-2">
+                        <span className="text-cyan font-bold">›</span>
                         <span>{pt}</span>
                       </li>
                     ))}
                   </ul>
                 )}
-              </Card>
+              </div>
             ))}
           </div>
         </section>
 
         {/* 12. Validation & Verification */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-            <ListChecks className="w-4 h-4 text-teal-400" />
-            <h2 className="text-lg font-bold text-slate-100">
-              Validation & Verification
-            </h2>
-          </div>
+        <section className="space-y-6 pt-8">
+          <SectionHeader title="Validation & Verification" />
 
-          <Card variant="default">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="pl-4 sm:pl-8 border-l border-white/10 ml-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {study.validationChecklist.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2.5 p-2.5 rounded-lg bg-slate-900/70 border border-slate-800/80 text-xs text-slate-300"
+                  className="flex items-start gap-3 py-2 text-base text-slate-300 font-light"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-cyan shrink-0 mt-0.5" />
                   <span className="leading-snug">{item}</span>
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         </section>
 
         {/* 13. Technical Learnings */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-            <Lightbulb className="w-4 h-4 text-amber-400" />
-            <h2 className="text-lg font-bold text-slate-100">
-              Technical Learnings
-            </h2>
-          </div>
+        <section className="space-y-6 pt-8">
+          <SectionHeader title="Technical Learnings" />
 
-          <Card variant="default">
-            <ul className="space-y-2.5 text-sm text-slate-300">
+          <div className="pl-4 sm:pl-8 border-l border-white/10 ml-2">
+            <ul className="space-y-6 text-base text-slate-300 font-light">
               {study.keyTechnicalLearnings.map((learning, idx) => (
-                <li key={idx} className="flex items-start gap-2.5">
-                  <span className="text-amber-400 font-bold text-xs mt-0.5 font-mono">
-                    [0{idx + 1}]
-                  </span>
+                <li key={idx} className="flex items-start gap-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan shrink-0 mt-2 shadow-[0_0_8px_rgba(0,245,212,0.8)]" />
                   <span className="leading-relaxed">{learning}</span>
                 </li>
               ))}
             </ul>
-          </Card>
+          </div>
         </section>
 
         {/* 14. Current Operational Relevance */}
         {study.operationalRelevance && (
-          <section className="space-y-3">
-            <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
-              <Lightbulb className="w-4 h-4 text-amber-400" />
-              <h2 className="text-lg font-bold text-slate-100">Current Operational Relevance</h2>
-            </div>
-            <Card variant="default">
-              <p className="text-sm text-slate-300 leading-relaxed">
+          <section className="space-y-6 pt-8">
+            <SectionHeader title="Current Operational Relevance" />
+            <div className="pl-4 sm:pl-8 border-l border-white/10 ml-2">
+              <p className="text-lg text-slate-300 leading-relaxed font-light">
                 {study.operationalRelevance}
               </p>
-            </Card>
+            </div>
           </section>
         )}
       </TechnicalDeepDive>

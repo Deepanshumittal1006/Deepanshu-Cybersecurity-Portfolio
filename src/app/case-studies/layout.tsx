@@ -7,7 +7,7 @@ export default function CaseStudiesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="py-10 sm:py-14">
+    <div className="pt-28 sm:pt-36 pb-12 sm:pb-16">
       <Container className="max-w-5xl">{children}</Container>
     </div>
   );

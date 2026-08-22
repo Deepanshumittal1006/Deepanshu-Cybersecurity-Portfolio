@@ -19,17 +19,17 @@ export function Badge({
   if (evidenceType) {
     const evidenceStyles: Record<SkillEvidence, string> = {
       "Professional Internship Experience":
-        "bg-emerald-950/70 text-emerald-300 border-emerald-700/50 hover:border-emerald-600/70",
+        "bg-cyan-950/30 text-cyan-300 border-cyan-500/30 hover:border-cyan-400/50 shadow-[0_0_10px_rgba(0,245,212,0.1)]",
       "Technical Experience":
-        "bg-sky-950/70 text-sky-300 border-sky-700/50 hover:border-sky-600/70",
+        "bg-blue-950/30 text-electric-blue border-electric-blue/30 hover:border-electric-blue/50 shadow-[0_0_10px_rgba(0,168,255,0.1)]",
       "Currently Learning":
-        "bg-amber-950/60 text-amber-300 border-amber-700/40 hover:border-amber-600/60",
+        "bg-purple/10 text-purple-300 border-purple/30 hover:border-purple/50 shadow-[0_0_10px_rgba(124,58,237,0.1)]",
     };
 
     return (
       <span
         className={cn(
-          "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border transition-colors",
+          "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold border transition-all cursor-default",
           evidenceStyles[evidenceType],
           className
         )}
@@ -42,16 +42,16 @@ export function Badge({
   }
 
   const baseVariantStyles = {
-    default: "bg-slate-800/80 text-slate-200 border-slate-700/60",
-    outline: "bg-transparent text-slate-300 border-slate-700",
-    evidence: "bg-sky-950/60 text-sky-300 border-sky-800/40",
-    subtle: "bg-slate-900/60 text-slate-400 border-slate-800/60",
+    default: "bg-white/10 text-white border-white/20",
+    outline: "bg-transparent text-slate-300 border-white/20",
+    evidence: "bg-cyan/10 text-cyan-300 border-cyan-500/30",
+    subtle: "bg-white/5 text-slate-400 border-white/10",
   };
 
   return (
     <span
       className={cn(
-        "inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-mono font-medium border",
+        "inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono font-medium border",
         baseVariantStyles[variant],
         className
       )}

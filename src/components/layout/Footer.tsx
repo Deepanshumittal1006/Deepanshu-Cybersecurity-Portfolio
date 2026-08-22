@@ -28,7 +28,7 @@ export function Footer() {
               Navigation
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs text-slate-400">
-              <Link href="/#current-experience" className="hover:text-sky-300 transition-colors">Experience</Link>
+              <Link href="/#experience" className="hover:text-sky-300 transition-colors">Experience</Link>
               <Link href="/#case-studies" className="hover:text-sky-300 transition-colors">Case Studies</Link>
               <Link href="/#skills" className="hover:text-sky-300 transition-colors">Skills Matrix</Link>
               <Link href="/#certifications" className="hover:text-sky-300 transition-colors">Certifications</Link>

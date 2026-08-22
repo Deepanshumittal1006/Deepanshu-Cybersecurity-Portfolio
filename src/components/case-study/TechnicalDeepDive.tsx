@@ -16,40 +16,30 @@ export function TechnicalDeepDive({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="space-y-6 pt-4 border-t border-slate-800/80">
+    <div className="space-y-6 pt-12 border-t border-white/10">
       {/* Toggle Banner Button */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         className={cn(
-          "w-full text-left p-4 sm:p-5 rounded-xl border transition-all duration-200 flex items-center justify-between gap-4 group cursor-pointer",
+          "w-full text-left py-4 sm:py-6 border-b border-white/10 transition-all duration-300 flex items-center justify-between gap-4 group cursor-pointer",
           isOpen
-            ? "bg-slate-900/90 border-sky-600/60 shadow-lg shadow-sky-950/40"
-            : "bg-slate-900/60 hover:bg-slate-900/90 border-slate-800 hover:border-slate-700 shadow-sm"
+            ? "border-cyan"
+            : "hover:border-cyan/50"
         )}
       >
-        <div className="flex items-center gap-3.5 min-w-0">
-          <div
-            className={cn(
-              "p-2.5 rounded-lg border transition-colors shrink-0",
-              isOpen
-                ? "bg-sky-950 text-sky-400 border-sky-800/60"
-                : "bg-slate-800/80 text-slate-300 border-slate-700/60 group-hover:border-slate-600 group-hover:text-sky-400"
-            )}
-          >
-            <Layers className="w-5 h-5" />
-          </div>
+        <div className="flex items-center gap-4 min-w-0">
           <div className="flex flex-col min-w-0">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-sm sm:text-base font-bold text-slate-100 group-hover:text-sky-300 transition-colors">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan transition-colors font-display">
                 Technical Deep Dive
               </span>
-              <span className="text-[11px] font-mono text-sky-300 bg-sky-950/70 border border-sky-800/60 px-2 py-0.5 rounded">
-                Full Implementation Details
+              <span className="text-[10px] font-mono text-cyan bg-cyan/10 border border-cyan/20 px-2 py-0.5 rounded uppercase tracking-widest hidden sm:inline-block">
+                Implementation Details
               </span>
             </div>
-            <p className="text-xs text-slate-400 font-mono truncate sm:whitespace-normal pt-0.5">
+            <p className="text-sm text-slate-400 font-light truncate sm:whitespace-normal">
               {isOpen
                 ? "Showing complete engineering responsibilities, configuration areas, validation checks, and operational learnings."
                 : "Click to expand detailed engineering responsibilities, configuration areas, validation checklist, and operational learnings."}
@@ -57,17 +47,17 @@ export function TechnicalDeepDive({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="text-xs font-mono font-medium text-sky-400 group-hover:text-sky-300 transition-colors">
-            {isOpen ? "Hide Technical Details ↑" : "View Full Technical Implementation ↓"}
+        <div className="flex items-center gap-3 shrink-0">
+          <span className="text-xs font-mono font-medium text-cyan group-hover:text-cyan/80 transition-colors hidden sm:block uppercase tracking-widest">
+            {isOpen ? "Hide Details" : "View Details"}
           </span>
           <div
             className={cn(
-              "p-1.5 rounded-md border border-slate-700 bg-slate-800/80 text-slate-300 transition-transform duration-300",
-              isOpen && "rotate-180 text-sky-400 border-sky-700 bg-sky-950/60"
+              "transition-transform duration-500 text-slate-400 group-hover:text-cyan",
+              isOpen && "rotate-180 text-cyan"
             )}
           >
-            <ChevronDown className="w-4 h-4" />
+            <ChevronDown className="w-5 h-5" />
           </div>
         </div>
       </button>

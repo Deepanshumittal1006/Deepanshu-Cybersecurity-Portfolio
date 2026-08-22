@@ -134,13 +134,13 @@ export function ContactForm({ formEndpoint, recipientEmail }: ContactFormProps) 
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="space-y-2">
           <label
             htmlFor="contact-name"
-            className="text-xs font-mono text-slate-300 block"
+            className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block"
           >
-            Full Name <span className="text-sky-400">*</span>
+            Full Name <span className="text-cyan">*</span>
           </label>
           <input
             id="contact-name"
@@ -149,14 +149,14 @@ export function ContactForm({ formEndpoint, recipientEmail }: ContactFormProps) 
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Your name"
-            className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors"
+            className="w-full px-4 py-3 text-sm rounded-none bg-transparent border-b border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-cyan focus:bg-white/5 transition-all"
           />
         </div>
 
-        <div className="space-y-1.5">
+        <div className="space-y-2">
           <label
             htmlFor="contact-organization"
-            className="text-xs font-mono text-slate-300 block"
+            className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block"
           >
             Organization
           </label>
@@ -166,17 +166,17 @@ export function ContactForm({ formEndpoint, recipientEmail }: ContactFormProps) 
             value={organization}
             onChange={(e) => setOrganization(e.target.value)}
             placeholder="Company (optional)"
-            className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors"
+            className="w-full px-4 py-3 text-sm rounded-none bg-transparent border-b border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-cyan focus:bg-white/5 transition-all"
           />
         </div>
       </div>
 
-      <div className="space-y-1.5">
+      <div className="space-y-2 pt-2">
         <label
           htmlFor="contact-email"
-          className="text-xs font-mono text-slate-300 block"
+          className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block"
         >
-          Email <span className="text-sky-400">*</span>
+          Email <span className="text-cyan">*</span>
         </label>
         <input
           id="contact-email"
@@ -185,37 +185,40 @@ export function ContactForm({ formEndpoint, recipientEmail }: ContactFormProps) 
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@company.com"
-          className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors"
+          className="w-full px-4 py-3 text-sm rounded-none bg-transparent border-b border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-cyan focus:bg-white/5 transition-all"
         />
       </div>
 
-      <div className="space-y-1.5">
+      <div className="space-y-2 pt-2">
         <label
           htmlFor="contact-message"
-          className="text-xs font-mono text-slate-300 block"
+          className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block"
         >
-          Message <span className="text-sky-400">*</span>
+          Message <span className="text-cyan">*</span>
         </label>
         <textarea
           id="contact-message"
-          rows={4}
+          rows={5}
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Your message regarding network engineering, NOC operations, or security opportunities..."
-          className="w-full px-3 py-2 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors"
+          className="w-full px-4 py-3 text-sm rounded-none bg-transparent border-b border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-cyan focus:bg-white/5 transition-all resize-y"
         />
       </div>
 
-      <Button
-        variant="primary"
-        size="sm"
-        type="submit"
-        icon={<Send className="w-3.5 h-3.5" />}
-        disabled={status === "sending"}
-      >
-        {status === "sending" ? "Sending..." : "Send Message"}
-      </Button>
+      <div className="pt-6">
+        <Button
+          variant="primary"
+          size="lg"
+          type="submit"
+          icon={<Send className="w-4 h-4" />}
+          disabled={status === "sending"}
+          className="w-full sm:w-auto"
+        >
+          {status === "sending" ? "Sending..." : "Send Message"}
+        </Button>
+      </div>
     </form>
   );
 }

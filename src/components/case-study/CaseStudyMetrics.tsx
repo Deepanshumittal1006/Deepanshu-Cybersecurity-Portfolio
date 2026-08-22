@@ -23,25 +23,25 @@ export function CaseStudyMetrics({
 
       <div
         className={cn(
-          "grid gap-4",
+          "grid gap-6 border-y border-white/10 py-8",
           metrics.length === 1 && "grid-cols-1 max-w-xs",
-          metrics.length === 2 && "grid-cols-1 sm:grid-cols-2",
-          metrics.length >= 3 && "grid-cols-1 sm:grid-cols-3"
+          metrics.length === 2 && "grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/10",
+          metrics.length >= 3 && "grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10"
         )}
       >
         {metrics.map((metric, idx) => (
           <div
             key={idx}
-            className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between space-y-1"
+            className="flex flex-col justify-center px-4 sm:px-6 first:pl-0 last:pr-0 space-y-1"
           >
-            <span className="text-2xl sm:text-3xl font-extrabold font-mono text-sky-400">
+            <span className="text-3xl sm:text-4xl font-extrabold font-mono text-cyan">
               {metric.value}
             </span>
-            <span className="text-xs font-semibold text-slate-200">
+            <span className="text-sm font-semibold text-slate-200 mt-2">
               {metric.label}
             </span>
             {metric.detail && (
-              <span className="text-[11px] font-mono text-slate-500">
+              <span className="text-[11px] font-mono text-slate-500 uppercase tracking-widest mt-1 block">
                 {metric.detail}
               </span>
             )}
