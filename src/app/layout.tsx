@@ -30,6 +30,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://deepanshu-portfolio-q8sp.onrender.com"),
   title: "Deepanshu Mittal | Network Engineer — Cybersecurity & OT Security",
   description:
     "Professional portfolio of Deepanshu Mittal — Network Engineer with hands-on experience across telecom NOC operations, enterprise network infrastructure, Fortinet firewall deployment, and industrial OT/IT security.",
